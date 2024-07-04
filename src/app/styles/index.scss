@@ -1,0 +1,22 @@
+@import "reset";
+
+#root {
+    font-size: 16px;
+    color: rgb(41, 41, 41);
+    background: rgb(253, 232, 191);
+    min-height: 100vh;
+}
+
+.content-page {
+    display: flex;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;               /* ширина scrollbar */
+    height: 8px;
+}
+
+.app *::-webkit-scrollbar {
+    width: 12px;               /* ширина scrollbar */
+    height: 8px;
+}

@@ -1,0 +1,21 @@
+.paginator {
+  display: flex;
+  flex-direction: row;
+}
+
+.block {
+  width: 20px;
+  height: 20px;
+}
+
+.primary {
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  &:hover {
+      color: rgb(99, 99, 99);
+  }
+}
+
+.current {
+  color: rgb(186, 186, 252);
+}
