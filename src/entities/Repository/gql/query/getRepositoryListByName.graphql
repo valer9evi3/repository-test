@@ -1,0 +1,40 @@
+query getRepositoryListByName($searchText: String!, $cursor: String) {
+    search(query: $searchText, type: REPOSITORY, after: $cursor, first: 10) {
+        repositoryCount
+        pageInfo {
+            startCursor
+            endCursor
+            hasPreviousPage
+            hasNextPage
+        }
+        edges {
+            cursor
+            node {
+                name
+                id
+            }
+        }
+        nodes {
+            ... on Repository {
+                name
+                id
+                stargazerCount
+                owner {
+                    avatarUrl
+                    id
+                    login
+                    url
+                }
+                updatedAt
+                description
+                languages(first: 100) {
+                    nodes {
+                        id
+                        name
+                        color
+                    }
+                }
+            }
+        }
+    }
+}

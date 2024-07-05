@@ -1,0 +1,41 @@
+query getRepositoryListCurrentUser($cursor: String) {
+    viewer {
+        name
+        repositories(first: 10, after: $cursor) {
+            edges {
+                cursor
+                node {
+                    name
+                    id
+                }
+            }
+            totalCount
+            pageInfo {
+                startCursor
+                endCursor
+                hasNextPage
+                hasPreviousPage
+            }
+            nodes {
+                name
+                id
+                stargazerCount
+                owner {
+                    avatarUrl
+                    id
+                    login
+                    url
+                }
+                updatedAt
+                description
+                languages(first: 100) {
+                    nodes {
+                        id
+                        name
+                        color
+                    }
+                }
+            }
+        }
+    }
+}

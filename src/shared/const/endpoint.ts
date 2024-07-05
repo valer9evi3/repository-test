@@ -1,6 +1,6 @@
 import { ApolloLink, DefaultOptions } from '@apollo/client';
 
-export const BASE_URL = 'https://api.github.com/graphql';
+export const BASE_URL = 'https://api.github.com';
 
 export const Endpoint = {
     API: `${BASE_URL}/api`,
@@ -21,7 +21,7 @@ export const defaultOptions: DefaultOptions = {
 export const authLink = new ApolloLink((operation, forward) => {
     operation.setContext(({ headers }: any) => ({
         headers: {
-            authorization: `Bearer`,
+            authorization: `Bearer `,
             ...headers,
         },
     }));
